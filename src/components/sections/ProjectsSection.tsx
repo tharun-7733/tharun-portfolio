@@ -17,10 +17,10 @@ const projects: Project[] = [
     tags: ["Python3", "Google Colab", "Gradio", "Scikit-learn"],
   },
   {
-    title: "News Article Summarizer",
+    title: "Fast Fresh Facts",
     description:
       "Web-based system utilizing a BART-based Transformer model for automated news summarization, deployed on Hugging Face for easy accessibility.",
-    tags: ["Python3", "Streamlit", "Flask", "Hugging Face"],
+    tags: ["DistilBART", "Flask", "Python3", "Hugging Face"],
   },
   {
     title: "Sentimental Analysis of Social Media",

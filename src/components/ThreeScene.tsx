@@ -1101,12 +1101,12 @@ const ContactScene = () => {
 
     const textureLoader = new THREE.TextureLoader(loadingManager);
     const textureSources = [
-      "/assets/haiming_linkedin.png",
-      "/assets/haiming_linkedin.png",
-      "/assets/haiming_linkedin.png",
-      "/assets/haiming_linkedin.png",
-      "/assets/haiming_linkedin.png",
-      "/assets/haiming_linkedin.png",
+      "/assets/tharun_linkedin.png",
+      "/assets/tharun_linkedin.png",
+      "/assets/tharun_linkedin.png",
+      "/assets/tharun_linkedin.png",
+      "/assets/tharun_linkedin.png",
+      "/assets/tharun_linkedin.png",
     ];
 
     const glowSize = 128;

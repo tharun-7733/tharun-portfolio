@@ -45,43 +45,37 @@ const ParticleEffect = () => {
     function createTextImage() {
       if (!ctx || !canvas) return 0;
 
-      ctx.fillStyle = "white";
+      const logoHeight = isMobile ? 40 : 100;
+      ctx.font = `bold ${logoHeight}px Inter, sans-serif`;
+      ctx.textAlign = "left";
+      ctx.textBaseline = "top";
+      
+      const tharunText = "THARUN";
+      const tejaText = "TEJA";
+      const tharunWidth = ctx.measureText(tharunText).width;
+      const tejaWidth = ctx.measureText(tejaText).width;
+      const logoSpacing = isMobile ? 10 : 20;
+      const totalWidth = tharunWidth + tejaWidth + logoSpacing;
+
       ctx.save();
-
-      const logoHeight = isMobile ? 40 : 120;
-      const haimingLogoWidth = logoHeight * (600 / 140); // Maintain aspect ratio
-      const pagesLogoWidth = logoHeight * (270 / 140); // Maintain aspect ratio
-      const logoSpacing = isMobile ? 2 : 10; // Increased gap for mobile and desktop
-      const totalWidth = haimingLogoWidth + pagesLogoWidth + logoSpacing;
-
       ctx.translate(
         canvas.width / 2 - totalWidth / 2,
         canvas.height / 2 - logoHeight / 2
       );
 
-      // Draw Haiming logo
-      ctx.save();
-      const haimingScale = logoHeight / 140;
-      ctx.scale(haimingScale, haimingScale);
-      const haimingPath = new Path2D(HAIMING_LOGO_PATH);
-      ctx.fill(haimingPath);
-      ctx.restore();
+      // Draw THARUN text
+      ctx.fillStyle = "white";
+      ctx.fillText(tharunText, 0, 0);
 
-      // Draw Pages logo
-      ctx.save();
-      ctx.translate(haimingLogoWidth + logoSpacing, 0);
-      const pagesScale = logoHeight / 140;
-      ctx.scale(pagesScale, pagesScale);
-      const pagesPath = new Path2D(PAGES_LOGO_PATH);
-      ctx.fill(pagesPath);
-      ctx.restore();
+      // Draw TEJA text
+      ctx.fillText(tejaText, tharunWidth + logoSpacing, 0);
 
       ctx.restore();
 
       textImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      return Math.max(haimingScale, pagesScale);
+      return logoHeight / 140; // Maintain similar scale for particle creation
     }
 
     function createParticle(scale: number) {
@@ -94,14 +88,10 @@ const ParticleEffect = () => {
         const y = Math.floor(Math.random() * canvas.height);
 
         if (data[(y * canvas.width + x) * 4 + 3] > 128) {
-          const logoHeight = isMobile ? 40 : 80;
-          const haimingLogoWidth = logoHeight * (652 / 140);
-          const pagesLogoWidth = logoHeight * (289 / 140);
-          const logoSpacing = isMobile ? 30 : 60;
-          const totalWidth = haimingLogoWidth + pagesLogoWidth + logoSpacing;
           const centerX = canvas.width / 2;
-          const isPages =
-            x >= centerX - totalWidth / 2 + haimingLogoWidth + logoSpacing;
+          // Simple heuristic: particles on the right of the center (with a small offset) are part of "PAGES"
+          const isPages = x > centerX;
+          
           return {
             x: x,
             y: y,

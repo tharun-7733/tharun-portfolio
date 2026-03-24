@@ -262,7 +262,7 @@ const ParticleEffect = () => {
       <canvas
         ref={canvasRef}
         className="w-full h-full absolute top-0 left-0 touch-none"
-        aria-label="Interactive particle effect with Haiming and Pages logos"
+        aria-label="Interactive particle effect with Tharun and Pages logos"
       />
     </div>
   );

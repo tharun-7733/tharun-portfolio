@@ -22,11 +22,11 @@ const ContactSection = forwardRef<HTMLElement, {}>((props, ref) => {
     title: "AI & Machine Learning Engineer",
     bio: "I’m an AI/ML developer and software engineer with a strong foundation in building intelligent, data-driven systems. I specialize in Python, machine learning, and natural language processing, with a focus on solving real-world challenges through scalable AI-powered solutions.",
     location: "India",
-    email: "tharunteja@example.com", // Placeholder, user will likely update
+    email: "official.tharunteja@gmail.com",
     availability: "Open to innovation projects",
     links: {
       github: "https://github.com/tharun-7733",
-      linkedin: "https://www.linkedin.com/in/tharun-teja",
+      linkedin: "https://www.linkedin.com/in/tharun-teja-o7",
     },
   };
 

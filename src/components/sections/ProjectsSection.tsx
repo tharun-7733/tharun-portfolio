@@ -11,26 +11,22 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "AI-powered Product Management System",
+    title: "Predicting Medical equipment Failure",
     description:
-      "A sophisticated Product Information Management (PIM) system leveraging AI for automated data enrichment, dynamic image generation, and seamless multi-channel content distribution.",
-    tags: ["LLM", "Next.js", "AWS"],
+      "ML-powered web solution to predict medical tool malfunctions using Logistic Regression with ~90% accuracy, streamlining maintenance and reducing downtime.",
+    tags: ["Python3", "Google Colab", "Gradio", "Scikit-learn"],
   },
   {
-    title: "E-commerce Platform",
+    title: "News Article Summarizer",
     description:
-      "Engineered and delivered robust e-commerce solutions for prominent brands like Shopee and Burberry, focusing on user experience and scalability.",
-    tags: [
-      "Design System",
-      "Performance Optimization",
-      "Scalable Project Architecture",
-    ],
+      "Web-based system utilizing a BART-based Transformer model for automated news summarization, deployed on Hugging Face for easy accessibility.",
+    tags: ["Python3", "Streamlit", "Flask", "Hugging Face"],
   },
   {
-    title: "Training Data Labeling Platform",
+    title: "Sentimental Analysis of Social Media",
     description:
-      "Developed a comprehensive data labeling platform to streamline the creation of high-quality training datasets for artificial intelligence models.",
-    tags: ["Low Code", "Dynamic Form", "Tencent Cloud"],
+      "Machine learning-driven web application using Logistic Regression, tokenization, and TF-IDF to analyze sentiment in social media data with 89% accuracy.",
+    tags: ["Python3", "Sklearn", "Jupyter", "Streamlit", "NLTK"],
   },
 ];
 

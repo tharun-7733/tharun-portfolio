@@ -169,7 +169,7 @@ const AboutSection = forwardRef<HTMLElement, {}>((props, ref) => {
             viewport={{ once: true, margin: "-100px" }}
           >
             {[
-              "I’m an AI/ML developer and software engineer with a strong foundation in building intelligent, data-driven systems. Currently pursuing my B.Tech in Computer Science at Lovely Professional University, I focus on applying machine learning and software development to solve real-world challenges.",
+              "I’m an AI/ML developer and software engineer with a strong foundation in building intelligent, data-driven systems. I focus on applying machine learning and software development to solve real-world challenges.",
               "My expertise lies in Python, machine learning, and natural language processing, along with frameworks such as Scikit-learn, Flask, and Streamlit. I am also proficient in data handling and analysis using tools like Pandas and NumPy.",
               "I have a strong problem-solving mindset, having solved 500+ Data Structures and Algorithms problems across platforms like LeetCode, CodeChef, GeeksforGeeks, and Codeforces, along with maintaining a solid competitive programming profile.",
               "I am passionate about building scalable AI-powered solutions and continuously improving my skills in machine learning, software engineering, and system design.",
@@ -205,57 +205,7 @@ const AboutSection = forwardRef<HTMLElement, {}>((props, ref) => {
           </motion.div>
         </div>
 
-        {/* Video Section */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-24 mb-8"
-        >
-          <h3 className="text-2xl md:text-3xl font-bold mb-8 text-gradient text-center">
-            See My Work In Action
-          </h3>
 
-          <div className="max-w-4xl mx-auto">
-            <AspectRatio
-              ratio={16 / 9}
-              className="bg-space-light rounded-lg overflow-hidden relative shadow-2xl shadow-neon-blue/10 border border-white/5"
-            >
-              {/* Show skeleton while video is loading */}
-              {!videoCanPlay && !videoError && <VideoSkeleton />}
-
-              {/* Show fallback when video fails */}
-              {videoError && (
-                <VideoFallback
-                  onRetry={retryVideo}
-                  message={
-                    isMobileDevice
-                      ? "Video not supported on this mobile device"
-                      : "Video failed to load"
-                  }
-                />
-              )}
-
-              {/* Video element with enhanced mobile support */}
-              <video
-                ref={videoRef}
-                className={`w-full h-full object-cover transition-opacity duration-500 ${
-                  videoCanPlay && !videoError ? "opacity-100" : "opacity-0"
-                }`}
-                loop
-                {...getVideoAttributes()}
-                style={getVideoStyles()}
-              >
-                <source src="/assets/compressed.mp4#t=0.001" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </AspectRatio>
-            <p className="text-center text-sm text-gray-400 mt-4">
-              AI generated video with trained LoRA models
-            </p>
-          </div>
-        </motion.div>
       </div>
 
       <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-space-dark to-transparent z-10" />

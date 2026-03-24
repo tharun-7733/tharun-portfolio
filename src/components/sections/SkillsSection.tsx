@@ -8,7 +8,7 @@ import React, {
 } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Compass, Layers, ChartBar } from "lucide-react";
+import { Code, Compass, Layers, ChartBar, Terminal, User } from "lucide-react";
 import {
   ResponsiveContainer,
   RadarChart,
@@ -22,126 +22,77 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const skills = [
   {
-    category: "Frontend",
+    category: "Languages",
     icon: Code,
     color: "bg-gradient-to-br from-neon-blue to-neon-purple",
     chartColor: "#00EEFF",
-    description:
-      "Specializing in building responsive, interactive user interfaces with modern frameworks and libraries.",
+    description: "Core programming and markup languages I use for building software and data systems.",
     items: [
-      {
-        name: "React",
-        value: 95,
-        description:
-          "Extensive experience with hooks, context API, server components",
-      },
-      {
-        name: "Next.js",
-        value: 90,
-        description: "Server-side rendering, routing, and API integration",
-      },
-      {
-        name: "Styling",
-        value: 90,
-        description: "Tailwind CSS, CSS Modules, CSS in JS, SASS, LESS",
-      },
-      {
-        name: "Bundling",
-        value: 80,
-        description: "Webpack, Vite, Rollup, Parcel, etc.",
-      },
-      {
-        name: "TypeScript",
-        value: 95,
-        description:
-          "Building type-safe applications for better maintainability",
-      },
-      {
-        name: "Monorepos",
-        value: 85,
-        description: "Yarn workspace, PNPM,Lerna, Nx, Turborepo, etc.",
-      },
+      { name: "C++", value: 90, description: "Highly proficient in competitive programming and system-level logic." },
+      { name: "C", value: 85, description: "Strong foundation in low-level memory management and hardware interaction." },
+      { name: "Python3", value: 95, description: "Primary language for ML/DL models, automation, and general development." },
+      { name: "MySQL", value: 80, description: "Efficient database design and complex query management." },
+      { name: "Kotlin", value: 75, description: "Building interactive and modern Android applications." },
+      { name: "XML", value: 70, description: "Data representation and UI layout design for Android development." },
+      { name: "NoSQL", value: 75, description: "Working with non-relational databases for flexible data storage." },
     ],
   },
   {
-    category: "Cloud",
-    icon: Compass,
+    category: "Frameworks",
+    icon: Layers,
     color: "bg-gradient-to-br from-neon-purple to-neon-pink",
     chartColor: "#F471B5",
-    description:
-      "Creating visually appealing and user-friendly interfaces with a focus on user experience.",
+    description: "Modern frameworks and libraries leveraged for AI, web, and mobile development.",
     items: [
-      {
-        name: "AWS",
-        value: 85,
-        description:
-          "AWS Amplify, S3, Lambda, Step Functions, API Gateway, etc.",
-      },
-      {
-        name: "Google Firebase",
-        value: 75,
-        description: "Firebase Auth, Firestore, Storage, Functions, etc.",
-      },
-      {
-        name: "Supabase",
-        value: 80,
-        description: "Supabase Auth, Postgres, Storage, Functions, etc.",
-      },
-      {
-        name: "Vercel",
-        value: 80,
-        description: "Vercel AI SDK, Edge Functions, etc.",
-      },
-      {
-        name: "Azure",
-        value: 80,
-        description: "Azure App Service, Storage, Functions, Cosmos DB, etc.",
-      },
-      {
-        name: "Tencent Cloud",
-        value: 75,
-        description: "Tencent Cloud Serverless, Storage, Functions, etc.",
-      },
+      { name: "Scikit Learn", value: 90, description: "Implementing classical machine learning algorithms and pipelines." },
+      { name: "Flask", value: 85, description: "Developing lightweight web APIs and server-side components." },
+      { name: "Gradio", value: 85, description: "Creating interactive interfaces for ML models quickly." },
+      { name: "Streamlit", value: 90, description: "Building data-driven dashboards and web applications." },
+      { name: "NumPy", value: 95, description: "Efficient numerical computations and array manipulations." },
+      { name: "Pandas", value: 95, description: "Data cleaning, transformation, and statistical analysis." },
+      { name: "Jetpack Compose", value: 80, description: "Modern toolkit for building native Android UIs." },
     ],
   },
   {
-    category: "Backend",
-    icon: Layers,
+    category: "Tools",
+    icon: Compass,
     color: "bg-gradient-to-br from-neon-pink to-neon-blue",
     chartColor: "#8B5CF6",
-    description:
-      "Building robust server-side applications with modern technologies and best practices.",
+    description: "Essential tools and environments for development, collaboration, and experimentation.",
     items: [
-      {
-        name: "Node.js",
-        value: 90,
-        description: "Server-side JavaScript with Express and RESTful APIs",
-      },
-      {
-        name: "Express",
-        value: 90,
-        description: "Creating scalable web applications and APIs",
-      },
-      {
-        name: "MongoDB",
-        value: 75,
-        description: "Document-based database design and optimization",
-      },
-      {
-        name: "Serverless",
-        value: 85,
-        description: "AWS Lambda, Step Functions, API Gateway",
-      },
-      {
-        name: "FastAPI",
-        value: 70,
-        description: "Python-based web framework for building APIs",
-      },
-      {
-        name: "LLM",
-        value: 85,
-        description: "OpenAI, Gemini, RAG, Prompt Engineering, etc.",
-      },
+      { name: "Git", value: 90, description: "Version control for collaborative and independent project management." },
+      { name: "Github", value: 90, description: "Source code hosting and collaboration platform." },
+      { name: "Jupyter", value: 95, description: "Interactive environment for data exploration and model training." },
+      { name: "Android Studio", value: 85, description: "Professional IDE for Android application development." },
+      { name: "VS Code", value: 95, description: "Primary IDE for most development and scripting tasks." },
+    ],
+  },
+  {
+    category: "Core CS",
+    icon: Terminal,
+    color: "bg-gradient-to-br from-cyan-500 to-blue-500",
+    chartColor: "#0EA5E9",
+    description: "Fundamental computer science knowledge that forms the backbone of engineering.",
+    items: [
+      { name: "OS", value: 85, description: "Understanding system architecture, process management, and memory." },
+      { name: "OOPs", value: 90, description: "Designing scalable code using object-oriented principles." },
+      { name: "Networking", value: 80, description: "Knowledge of protocols, OSI model, and data communication." },
+      { name: "DBMS", value: 85, description: "In-depth understanding of database systems and SQL architecture." },
+      { name: "Agile", value: 80, description: "Software development lifecycle management using agile methodologies." },
+    ],
+  },
+  {
+    category: "Soft Skills",
+    icon: User,
+    color: "bg-gradient-to-br from-green-400 to-emerald-600",
+    chartColor: "#10B981",
+    description: "Interpersonal and cognitive abilities that enhance professional performance.",
+    items: [
+      { name: "Problem-Solving", value: 95, description: "Analytical and logical approach to complex challenges." },
+      { name: "Leadership", value: 85, description: "Guidance and coordination for team success and goal achievement." },
+      { name: "Analytical Thinking", value: 90, description: "Data-driven and structured thinking for technical decision-making." },
+      { name: "Adaptability", value: 90, description: "Thriving in dynamic environments and learning new technologies." },
+      { name: "Collaboration", value: 95, description: "Working effectively in diverse teams to achieve shared objectives." },
     ],
   },
 ];
@@ -372,7 +323,7 @@ const SkillCategoryButton = ({
 const SkillsSection = forwardRef<HTMLElement, {}>((props, ref) => {
   const sectionRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("Frontend");
+  const [selectedCategory, setSelectedCategory] = useState("Languages");
   const [sectionHeight, setSectionHeight] = useState<number | null>(null);
   const isMobile = useIsMobile();
 

@@ -1,11 +1,13 @@
-import React, { useRef } from "react";
+import React, { useRef, forwardRef, useImperativeHandle } from "react";
 import { motion, useInView } from "framer-motion";
 import ThreeScene from "../ThreeScene";
 import { Mail, MapPin, Github, Linkedin } from "lucide-react";
 import ParticleEffect from "../ParticleEffect";
 
-const ContactSection = () => {
+const ContactSection = forwardRef<HTMLElement, {}>((props, ref) => {
   const sectionRef = useRef<HTMLElement>(null);
+  
+  useImperativeHandle(ref, () => sectionRef.current!);
   
   // NEW: Track if 3D scene should be visible
   const sceneInView = useInView(sectionRef, { 
@@ -16,15 +18,15 @@ const ContactSection = () => {
 
   // Profile information
   const profile = {
-    name: "Haiming Xu",
-    title: "Creative Software Engineer",
-    bio: "A creative software engineer dedicated to crafting immersive digital experiences by integrating cutting-edge technology with elegant design. My expertise in web development and diverse software engineering disciplines enables me to deliver distinctive digital solutions that elevate brand presence.",
-    location: "Singapore",
-    email: "haiming12322@gmail.com",
-    availability: "Passion for innovation projects",
+    name: "Tharun Teja",
+    title: "AI & Machine Learning Engineer",
+    bio: "I’m an AI/ML developer and software engineer with a strong foundation in building intelligent, data-driven systems. I specialize in Python, machine learning, and natural language processing, with a focus on solving real-world challenges through scalable AI-powered solutions.",
+    location: "India",
+    email: "tharunteja@example.com", // Placeholder, user will likely update
+    availability: "Open to innovation projects",
     links: {
-      github: "https://github.com/xuhaiming",
-      linkedin: "https://www.linkedin.com/in/xu-haiming-48502869",
+      github: "https://github.com/tharun-7733",
+      linkedin: "https://www.linkedin.com/in/tharun-teja",
     },
   };
 
@@ -291,6 +293,8 @@ const ContactSection = () => {
       <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-space-dark to-transparent z-10" />
     </section>
   );
-};
+});
+
+ContactSection.displayName = "ContactSection";
 
 export default ContactSection;

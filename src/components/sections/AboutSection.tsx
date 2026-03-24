@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, forwardRef, useImperativeHandle } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import ThreeScene from "../ThreeScene";
 import VideoSkeleton from "../VideoSkeleton";
@@ -6,10 +6,13 @@ import VideoFallback from "../VideoFallback";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useMobileVideo } from "@/hooks/use-mobile-video";
 
-const AboutSection = () => {
+const AboutSection = forwardRef<HTMLElement, {}>((props, ref) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
+  
+  useImperativeHandle(ref, () => sectionRef.current!);
+
   const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
   
   // NEW: Track if 3D scene should be visible (more aggressive threshold)
@@ -166,10 +169,10 @@ const AboutSection = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             {[
-              "I am currently serving as the Lead Frontend Engineer at Trustana, where I spearhead the development of AI-driven applications.",
-              "Throughout my career, I have collaborated with renowned companies such as Shopee, Tencent, Burberry, ThoughtWorks, Phillips, and more.",
-              "My expertise predominantly lies in frontend technologies including React, Next.js, and Node.js. However, I also possess substantial experience with backend and AI-related technologies such as AWS serverless architecture, MongoDB, AI agents leveraging OpenAI APIs, Gemini, RAG, and prompt engineering.",
-              "Additionally, I have contributed to AI-driven image, 3D and video generation projects using advanced tools such as Stable Diffusion, Hunyuan, Wan Video, Flux. I have also worked extensively with ComfyUI workflows, including Lora, ControlNet, IP Adapter, etc.",
+              "I’m an AI/ML developer and software engineer with a strong foundation in building intelligent, data-driven systems. Currently pursuing my B.Tech in Computer Science at Lovely Professional University, I focus on applying machine learning and software development to solve real-world challenges.",
+              "My expertise lies in Python, machine learning, and natural language processing, along with frameworks such as Scikit-learn, Flask, and Streamlit. I am also proficient in data handling and analysis using tools like Pandas and NumPy.",
+              "I have a strong problem-solving mindset, having solved 500+ Data Structures and Algorithms problems across platforms like LeetCode, CodeChef, GeeksforGeeks, and Codeforces, along with maintaining a solid competitive programming profile.",
+              "I am passionate about building scalable AI-powered solutions and continuously improving my skills in machine learning, software engineering, and system design.",
             ].map((text, index) => (
               <motion.p
                 key={index}
@@ -258,6 +261,8 @@ const AboutSection = () => {
       <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-space-dark to-transparent z-10" />
     </section>
   );
-};
+});
+
+AboutSection.displayName = "AboutSection";
 
 export default AboutSection;

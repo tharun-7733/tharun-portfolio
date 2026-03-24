@@ -19,7 +19,7 @@ const Index = () => {
 
   useEffect(() => {
     // This will update the page title
-    document.title = "Haiming Pages | Creative Fullstack App Developer";
+    document.title = "Tharun Teja | AI & Machine Learning Engineer";
 
     // Smooth scroll behavior for anchor links
     const handleAnchorClick = (e: MouseEvent) => {

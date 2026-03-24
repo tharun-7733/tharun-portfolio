@@ -31,7 +31,7 @@ const Navbar = () => {
             showBorder={false}
             className="text-2xl font-bold"
           >
-            Haiming Pages
+            Tharun Pages
           </GradientText>
         </a>
 

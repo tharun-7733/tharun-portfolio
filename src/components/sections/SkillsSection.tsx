@@ -369,8 +369,8 @@ const SkillCategoryButton = ({
   );
 };
 
-const SkillsSection = forwardRef((props, ref) => {
-  const sectionRef = useRef<HTMLDivElement>(null);
+const SkillsSection = forwardRef<HTMLElement, {}>((props, ref) => {
+  const sectionRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Frontend");
   const [sectionHeight, setSectionHeight] = useState<number | null>(null);

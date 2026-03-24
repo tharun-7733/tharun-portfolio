@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, forwardRef, useImperativeHandle } from "react";
 import { motion, useMotionTemplate, useMotionValue, useSpring, Variants, useInView } from "framer-motion";
 import ThreeScene from "../ThreeScene";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -152,9 +152,12 @@ const ProjectCard = ({ project, index, isSelected, onClick }: ProjectCardProps) 
   );
 };
 
-const ProjectsSection = () => {
+const ProjectsSection = forwardRef<HTMLElement, {}>((props, ref) => {
   const sceneRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null); // NEW: Add section ref
+  
+  useImperativeHandle(ref, () => sectionRef.current!);
+
   const [selectedProject, setSelectedProject] = useState(1);
   const isMobile = useIsMobile();
   
@@ -283,6 +286,8 @@ const ProjectsSection = () => {
       </div>
     </section>
   );
-};
+});
+
+ProjectsSection.displayName = "ProjectsSection";
 
 export default ProjectsSection;

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, forwardRef, useImperativeHandle } from "react";
 import {
   motion,
   useScroll,
@@ -76,8 +76,11 @@ const MagneticButton = ({ children, onClick, className }: MagneticButtonProps) =
   );
 };
 
-const HeroSection = () => {
+const HeroSection = forwardRef<HTMLElement, {}>((props, ref) => {
   const sectionRef = useRef<HTMLElement>(null);
+  
+  useImperativeHandle(ref, () => sectionRef.current!);
+
   // NEW: Track if section is in viewport
   const isInView = useInView(sectionRef, { 
     once: false, 
@@ -114,8 +117,8 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          Creative <span className="text-gradient">Fullstack</span> <br />
-          App <span className="text-neon-purple">Developer</span>
+          AI & <span className="text-gradient">Machine Learning</span> <br />
+          Engineer | <span className="text-neon-purple">Software Developer</span>
         </motion.h1>
 
         <motion.p
@@ -126,7 +129,7 @@ const HeroSection = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
         >
           <TypewriterText
-            text="Bringing ideas to life with code and creativity. Specializing in interactive experiences and immersive web design."
+            text="I build intelligent systems and scalable software solutions, combining machine learning with modern development to solve real-world problems."
             delay={0.8}
           />
         </motion.p>
@@ -190,6 +193,8 @@ const HeroSection = () => {
       </div>
     </section>
   );
-};
+});
+
+HeroSection.displayName = "HeroSection";
 
 export default HeroSection;

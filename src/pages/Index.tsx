@@ -4,6 +4,7 @@ import MobileNotice from "@/components/MobileNotice";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import SkillsSection from "@/components/sections/SkillsSection";
+import CertificationsSection from "@/components/sections/CertificationsSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/Footer";
@@ -13,6 +14,7 @@ const Index = () => {
     hero: null,
     about: null,
     skills: null,
+    certifications: null,
     projects: null,
     contact: null,
   });
@@ -93,6 +95,7 @@ const Index = () => {
         <HeroSection ref={(el) => (sectionRefs.current.hero = el)} />
         <AboutSection ref={(el) => (sectionRefs.current.about = el)} />
         <SkillsSection ref={(el) => (sectionRefs.current.skills = el)} />
+        <CertificationsSection ref={(el) => (sectionRefs.current.certifications = el)} />
         <ProjectsSection ref={(el) => (sectionRefs.current.projects = el)} />
         <ContactSection ref={(el) => (sectionRefs.current.contact = el)} />
       </main>

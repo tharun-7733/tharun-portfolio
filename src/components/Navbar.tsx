@@ -29,14 +29,14 @@ const Navbar = () => {
             colors={["#00EEFF", "#8B5CF6", "#F471B5", "#00EEFF", "#8B5CF6", "#F471B5"]}
             animationSpeed={10}
             showBorder={false}
-            className="text-2xl font-bold"
+            className="text-3xl font-bold tracking-widest"
           >
-            Tharun Pages
+            TT
           </GradientText>
         </a>
 
         <nav className="hidden md:flex space-x-10">
-          {["About", "Skills", "Projects", "Contact"].map((item) => (
+          {["About", "Skills", "Certifications", "Projects", "Contact"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}

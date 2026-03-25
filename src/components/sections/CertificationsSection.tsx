@@ -14,28 +14,40 @@ interface Certification {
 
 const certifications: Certification[] = [
   {
-    title: "AWS Certified Machine Learning – Specialty",
-    issuer: "Amazon Web Services",
-    date: "2024",
-    description: "Validates expertise in building, training, tuning, and deploying machine learning models on the AWS Cloud.",
+    title: "Oracle AI Foundation Associate",
+    issuer: "Oracle",
+    date: "Credential Verified",
+    description: "Foundational knowledge and hands-on understanding of AI concepts, machine learning, and cloud-based AI solutions.",
     icon: Award,
-    color: "from-orange-400 to-amber-600",
+    color: "from-red-500 to-rose-600",
+    link: "https://drive.google.com/file/d/1tlkFMTyBCBo0ULTdnUfz6U5Y4f4PzBlK/view?usp=drive_link"
   },
   {
-    title: "Deep Learning Specialization",
+    title: "Supervised Machine Learning: Regression and Classification",
     issuer: "Coursera / deeplearning.ai",
-    date: "2023",
-    description: "Comprehensive study of neural networks, hyperparameter tuning, CNNs, sequence models, and deep learning algorithms.",
+    date: "Credential Verified",
+    description: "Comprehensive coursework in building machine learning models using supervised learning algorithms.",
     icon: Award,
     color: "from-neon-blue to-blue-600",
+    link: "https://drive.google.com/file/d/1E48TDW6fr9lpoC6U1ADKy7yrmeJAquzv/view?usp=drive_link"
   },
   {
-    title: "TensorFlow Developer Certificate",
-    issuer: "Google",
-    date: "2023",
-    description: "Demonstrated technical knowledge of building and training models using TensorFlow for computer vision and NLP apps.",
+    title: "Data Structures and Algorithms",
+    issuer: "AlgoTutor",
+    date: "Credential Verified",
+    description: "Advanced training and problem-solving capability in Data Structures and algorithmic logic.",
     icon: Award,
-    color: "from-yellow-400 to-orange-500",
+    color: "from-neon-purple to-purple-600",
+    link: "https://drive.google.com/file/d/1u3t9y9cAxgYYQpdl31fZDGivw9bDYn2p/view?usp=drive_link"
+  },
+  {
+    title: "The Bits and Bytes of Computer Networking",
+    issuer: "Google",
+    date: "Credential Verified",
+    description: "In-depth understanding of networking protocols, cloud architecture, and internet communications.",
+    icon: Award,
+    color: "from-green-400 to-emerald-600",
+    link: "https://drive.google.com/file/d/1JmVk2dNgDlzUDRutwL4PzHQZfTpd1rDP/view?usp=drive_link"
   }
 ];
 

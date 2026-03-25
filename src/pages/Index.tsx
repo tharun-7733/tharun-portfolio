@@ -6,6 +6,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import SkillsSection from "@/components/sections/SkillsSection";
 import CertificationsSection from "@/components/sections/CertificationsSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
+import AchievementsSection from "@/components/sections/AchievementsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,7 @@ const Index = () => {
     skills: null,
     certifications: null,
     projects: null,
+    achievements: null,
     contact: null,
   });
 
@@ -97,6 +99,7 @@ const Index = () => {
         <SkillsSection ref={(el) => (sectionRefs.current.skills = el)} />
         <CertificationsSection ref={(el) => (sectionRefs.current.certifications = el)} />
         <ProjectsSection ref={(el) => (sectionRefs.current.projects = el)} />
+        <AchievementsSection ref={(el) => (sectionRefs.current.achievements = el)} />
         <ContactSection ref={(el) => (sectionRefs.current.contact = el)} />
       </main>
       <Footer />

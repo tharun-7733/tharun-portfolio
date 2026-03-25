@@ -2,12 +2,11 @@ import React, { useRef, useState, useImperativeHandle, forwardRef, useEffect } f
 import { motion, useInView } from "framer-motion";
 import { Trophy, Code2, TrendingUp, Cpu } from "lucide-react";
 
-// NOTE: Replace these with your actual platform usernames
-const LEETCODE_USERNAME = "tharun-7733";
-const CODECHEF_USERNAME = "tharun_7733";
-// Adjust your CodeChef static details if an API isn't used
-const CODECHEF_RATING = "1850";
-const CODECHEF_STARS = 4;
+// Platform configurations for live data fetching and static fallbacks
+const LEETCODE_USERNAME = "tharun_73";
+const CODECHEF_USERNAME = "cp_shanks77";
+const CODECHEF_RATING = "1383";
+const CODECHEF_STARS = 1;
 
 const AchievementsSection = forwardRef<HTMLElement, {}>((props, ref) => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -114,21 +113,9 @@ const AchievementsSection = forwardRef<HTMLElement, {}>((props, ref) => {
               
               <div className="flex flex-col items-center justify-center h-full pb-8">
                 {/* Dynamically generating stars based on rating */}
-                <div className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-yellow-600 mb-2 drop-shadow-lg flex items-center gap-2">
+                <div className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-yellow-600 mb-6 drop-shadow-lg flex items-center gap-2">
                   <span>{CODECHEF_RATING}</span>
                   <span className="text-sm font-normal text-white/50 self-end mb-2 tracking-widest uppercase">/ RATING</span>
-                </div>
-                
-                <div className="flex gap-2 mt-4 mb-6">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <svg 
-                      key={i}
-                      className={`w-6 h-6 md:w-8 md:h-8 ${i < CODECHEF_STARS ? 'text-yellow-400 fill-yellow-400' : 'text-gray-600 fill-gray-800'}`} 
-                      viewBox="0 0 24 24" 
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                  ))}
                 </div>
 
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-neon-purple/10 border border-neon-purple/30 text-neon-purple font-medium">

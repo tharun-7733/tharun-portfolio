@@ -7,6 +7,7 @@ import SkillsSection from "@/components/sections/SkillsSection";
 import CertificationsSection from "@/components/sections/CertificationsSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import AchievementsSection from "@/components/sections/AchievementsSection";
+import ResearchPapersSection from "@/components/sections/ResearchPapersSection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,7 @@ const Index = () => {
     certifications: null,
     projects: null,
     achievements: null,
+    researchPapers: null,
     contact: null,
   });
 
@@ -100,6 +102,7 @@ const Index = () => {
         <CertificationsSection ref={(el) => (sectionRefs.current.certifications = el)} />
         <ProjectsSection ref={(el) => (sectionRefs.current.projects = el)} />
         <AchievementsSection ref={(el) => (sectionRefs.current.achievements = el)} />
+        <ResearchPapersSection ref={(el) => (sectionRefs.current.researchPapers = el)} />
         <ContactSection ref={(el) => (sectionRefs.current.contact = el)} />
       </main>
       <Footer />

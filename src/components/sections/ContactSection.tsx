@@ -133,16 +133,23 @@ const ContactSection = forwardRef<HTMLElement, {}>((props, ref) => {
                   className="relative h-20 w-20 rounded-full bg-gradient-to-br from-neon-blue via-neon-purple to-neon-pink p-1 flex-shrink-0"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                 >
-                  <div className="h-full w-full rounded-full bg-space-dark overflow-hidden relative z-10">
-                    <img 
-                      src="/assets/myPic.jpeg" 
-                      alt="Tharun Teja" 
-                      className="w-full h-full object-cover object-top"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "/assets/tharun_linkedin.jpg";
-                      }}
-                    />
+                  <div className="h-full w-full rounded-full bg-space-dark overflow-hidden relative z-10 hover:scale-105 transition-transform duration-300">
+                    <a 
+                      href="/Tharun_CV.pdf" 
+                      download="Tharun_CV.pdf" 
+                      className="block w-full h-full cursor-pointer"
+                      title="Download Resume"
+                    >
+                      <img 
+                        src="/assets/myPic.jpeg" 
+                        alt="Tharun Teja" 
+                        className="w-full h-full object-cover object-top"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "/assets/tharun_linkedin.jpg";
+                        }}
+                      />
+                    </a>
                   </div>
 
                   {/* Glow effect around avatar */}

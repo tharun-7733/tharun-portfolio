@@ -135,13 +135,7 @@ const HeroSection = forwardRef<HTMLElement, {}>((props, ref) => {
             />
           </motion.p>
 
-          <motion.div
-            style={{ y: ySubtitle, opacity }}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.5, duration: 0.5 }}
-            className="flex flex-wrap gap-4 justify-center md:justify-start mt-8"
-          >
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start mt-8">
             <MagneticButton
               onClick={() =>
                 document
@@ -167,30 +161,8 @@ const HeroSection = forwardRef<HTMLElement, {}>((props, ref) => {
               </svg>
             </MagneticButton>
 
-            <motion.a
-              href="/Tharun_CV.pdf"
-              download
-              className="group flex items-center gap-2 bg-neon-purple/10 hover:bg-neon-purple/20 border border-neon-purple text-neon-purple py-3 px-6 rounded-full transition-colors duration-300 w-fit"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Download Resume
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 transform group-hover:translate-y-1 transition-transform"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                />
-              </svg>
-            </motion.a>
-          </motion.div>
+
+          </div>
 
         </div>
 
@@ -203,18 +175,45 @@ const HeroSection = forwardRef<HTMLElement, {}>((props, ref) => {
         >
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-neon-blue to-neon-purple rounded-2xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative p-2 rounded-2xl bg-white/5 backdrop-blur-md border border-white/20 shadow-2xl overflow-hidden aspect-[4/5] w-[300px]">
+            <a 
+              href="/Tharun_CV.pdf" 
+              download="Tharun_CV.pdf"
+              className="relative p-2 rounded-2xl bg-white/5 backdrop-blur-md border border-white/20 shadow-2xl overflow-hidden aspect-[4/5] w-[300px] block cursor-pointer group/card"
+              title="Click to download CV"
+            >
               <img 
                 src="/assets/myPic.jpeg" 
                 alt="Tharun Teja" 
-                className="w-full h-full object-cover object-top filter grayscale-[10%] group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover object-top filter grayscale-[10%] group-hover/card:grayscale-0 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-space-dark/60 to-transparent" />
-              <div className="absolute bottom-4 left-4">
+              {/* Gradient overlay - darkens on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-space-dark/70 via-transparent to-transparent group-hover/card:from-black/80 group-hover/card:via-black/40 transition-all duration-500" />
+
+              {/* Always-visible pulsing download badge */}
+              <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-black/60 backdrop-blur-sm border border-neon-purple/60 text-neon-purple rounded-full px-3 py-1.5 shadow-[0_0_12px_rgba(139,92,246,0.4)]">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-purple opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-purple"></span>
+                </span>
+                <span className="text-[11px] font-semibold uppercase tracking-widest">Click for CV</span>
+              </div>
+
+              {/* Download gesture overlay - slides up on hover */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover/card:opacity-100 transition-all duration-400 translate-y-4 group-hover/card:translate-y-0">
+                <div className="bg-neon-purple/30 backdrop-blur-sm border border-neon-purple/50 rounded-2xl px-5 py-3 flex flex-col items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-neon-purple animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  <span className="text-white text-xs font-semibold uppercase tracking-widest">Download CV</span>
+                </div>
+              </div>
+
+              {/* Name / title bar - always visible */}
+              <div className="absolute bottom-4 left-4 group-hover/card:opacity-0 transition-opacity duration-300">
                 <p className="text-white font-bold text-lg">Tharun Teja</p>
                 <p className="text-neon-blue text-sm">AI/ML Engineer</p>
               </div>
-            </div>
+            </a>
           </div>
         </motion.div>
       </div>

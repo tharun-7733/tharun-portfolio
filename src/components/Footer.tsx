@@ -23,20 +23,26 @@ const Footer = () => {
           <div className="mb-8 md:mb-0 relative flex items-center gap-4">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/20 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(0,238,255,0.2)] group-hover:shadow-[0_0_25px_rgba(0,238,255,0.4)] transition-all duration-500">
-                <img 
-                  src="/assets/myPic.jpeg" 
-                  alt="Tharun Teja" 
-                  className="w-full h-full object-cover object-top filter grayscale-[20%] group-hover:grayscale-0 transition-all duration-500"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "/assets/profile_photo.jpg"; // Try next
-                    target.onerror = () => {
-                      target.src = "/assets/tharun_linkedin.jpg"; // Ultimate fallback
-                    };
-                  }}
-                />
-
+              <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/20 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(0,238,255,0.2)] group-hover:shadow-[0_0_25px_rgba(0,238,255,0.4)] transition-all duration-500 hover:scale-110">
+                <a 
+                  href="/Tharun_CV.pdf" 
+                  download="Tharun_CV.pdf" 
+                  className="block w-full h-full cursor-pointer"
+                  title="Download Resume"
+                >
+                  <img 
+                    src="/assets/myPic.jpeg" 
+                    alt="Tharun Teja" 
+                    className="w-full h-full object-cover object-top filter grayscale-[20%] group-hover:grayscale-0 transition-all duration-500"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "/assets/profile_photo.jpg"; // Try next
+                      target.onerror = () => {
+                        target.src = "/assets/tharun_linkedin.jpg"; // Ultimate fallback
+                      };
+                    }}
+                  />
+                </a>
               </div>
             </div>
             <div>

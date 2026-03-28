@@ -150,16 +150,25 @@ const AboutSection = forwardRef<HTMLElement, {}>((props, ref) => {
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="md:order-2 relative h-[500px] w-full">
-            <div className="absolute inset-0">
+          <a 
+            href="/Tharun_CV.pdf" 
+            download="Tharun_CV.pdf"
+            className="md:order-2 relative h-[500px] w-full cursor-pointer group/about-img"
+            title="Download Resume"
+          >
+            <div className="absolute inset-0 z-10">
               <ThreeScene sceneType="about" isVisible={sceneInView} />
             </div>
 
             <motion.div
               style={{ y: yImage }}
-              className="absolute inset-0 flex items-center justify-center pointer-events-none"
-            />
-          </div>
+              className="absolute inset-0 flex items-center justify-center pointer-events-none z-20"
+            >
+              <div className="opacity-0 group-hover/about-img:opacity-100 transition-opacity bg-neon-blue/20 backdrop-blur-md px-4 py-2 rounded-full text-neon-blue border border-neon-blue/30 text-sm font-bold uppercase tracking-widest">
+                Download Resume
+              </div>
+            </motion.div>
+          </a>
 
 
 

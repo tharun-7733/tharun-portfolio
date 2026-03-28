@@ -161,6 +161,8 @@ const AboutSection = forwardRef<HTMLElement, {}>((props, ref) => {
             />
           </div>
 
+
+
           <motion.div 
             className="md:order-1 space-y-6"
             variants={containerVariants}

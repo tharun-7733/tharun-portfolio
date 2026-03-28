@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import GradientText from "./GradientText";
-import { Menu, X, FileText } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -54,15 +54,7 @@ const Navbar = () => {
               {item}
             </a>
           ))}
-          <a
-            href="/Tharun_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 relative text-sm uppercase tracking-wider text-neon-purple hover:text-neon-blue transition-colors duration-300 border border-neon-purple/30 px-3 py-1 rounded-md hover:border-neon-blue shadow-[0_0_10px_rgba(139,92,246,0.1)] hover:shadow-[0_0_15px_rgba(0,238,255,0.2)]"
-          >
-            <FileText className="w-4 h-4" />
-            Resume
-          </a>
+
         </nav>
 
         {/* Mobile menu button */}
@@ -91,16 +83,7 @@ const Navbar = () => {
               {item}
             </a>
           ))}
-          <a
-            href="/Tharun_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 text-lg uppercase tracking-widest text-neon-purple bg-neon-purple/10 py-3 rounded-lg border border-neon-purple/30"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            <FileText className="w-5 h-5" />
-            Resume
-          </a>
+
         </div>
       </div>
     </header>

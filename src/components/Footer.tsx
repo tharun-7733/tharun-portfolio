@@ -1,5 +1,4 @@
 import React from "react";
-import { FileText } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -58,15 +57,6 @@ const Footer = () => {
 
 
           <div className="flex flex-col items-center mt-4 md:items-end md:mt-0 gap-4">
-            <a 
-              href="/Tharun_CV.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-white/60 hover:text-neon-blue transition-colors duration-300"
-            >
-              <FileText className="w-4 h-4" />
-              <span>Resume</span>
-            </a>
             <p className="text-white/60">© {currentYear} All Rights Reserved</p>
           </div>
         </div>

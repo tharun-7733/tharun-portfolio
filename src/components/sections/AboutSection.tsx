@@ -214,35 +214,7 @@ const AboutSection = forwardRef<HTMLElement, {}>((props, ref) => {
               ))}
             </motion.div>
 
-            <motion.div
-              variants={itemVariants}
-              className="pt-4"
-            >
-              <motion.a
-                href="/Tharun_CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-neon-blue/10 hover:bg-neon-blue/20 border border-neon-blue text-neon-blue py-3 px-6 rounded-full transition-colors duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                View Full Resume
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  />
-                </svg>
-              </motion.a>
-            </motion.div>
+
           </motion.div>
 
         </div>

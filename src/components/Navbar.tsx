@@ -35,7 +35,7 @@ const Navbar = () => {
           </GradientText>
         </a>
 
-        <nav className="hidden md:flex space-x-10">
+        <nav className="hidden md:flex space-x-10 items-center">
           {["About", "Skills", "Certifications", "Projects", "Achievements", "Research", "Contact"].map((item) => (
             <a
               key={item}
@@ -45,7 +45,16 @@ const Navbar = () => {
               {item}
             </a>
           ))}
+          <a
+            href="/Tharun_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative text-sm uppercase tracking-wider text-neon-purple hover:text-neon-blue transition-colors duration-300 border border-neon-purple/30 px-3 py-1 rounded-md hover:border-neon-blue shadow-[0_0_10px_rgba(139,92,246,0.1)] hover:shadow-[0_0_15px_rgba(0,238,255,0.2)]"
+          >
+            Resume
+          </a>
         </nav>
+
       </div>
     </header>
   );

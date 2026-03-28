@@ -140,6 +140,7 @@ const HeroSection = forwardRef<HTMLElement, {}>((props, ref) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.5, duration: 0.5 }}
+            className="flex flex-wrap gap-4 justify-center md:justify-start mt-8"
           >
             <MagneticButton
               onClick={() =>
@@ -165,7 +166,32 @@ const HeroSection = forwardRef<HTMLElement, {}>((props, ref) => {
                 />
               </svg>
             </MagneticButton>
+
+            <motion.a
+              href="/Tharun_CV.pdf"
+              download
+              className="group flex items-center gap-2 bg-neon-purple/10 hover:bg-neon-purple/20 border border-neon-purple text-neon-purple py-3 px-6 rounded-full transition-colors duration-300 w-fit"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Download Resume
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 transform group-hover:translate-y-1 transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                />
+              </svg>
+            </motion.a>
           </motion.div>
+
         </div>
 
         {/* New Hero Profile Card */}

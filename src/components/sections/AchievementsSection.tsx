@@ -5,10 +5,7 @@ import { Trophy, Code2, TrendingUp, Cpu, ExternalLink } from "lucide-react";
 // Platform configurations for live data fetching and static fallbacks
 const LEETCODE_USERNAME = "tharun_73";
 const CODECHEF_USERNAME = "cp_shanks77";
-<<<<<<< HEAD
-=======
 const HACKERRANK_USERNAME = "tharuntej7373";
->>>>>>> f1215c3 (feat: populate live leetcode and codechef widget usernames)
 const CODECHEF_RATING = "1383";
 const CODECHEF_STARS = 1;
 

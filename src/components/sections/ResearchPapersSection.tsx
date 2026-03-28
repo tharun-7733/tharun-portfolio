@@ -14,11 +14,11 @@ interface ResearchPaper {
 
 const researchPapers: ResearchPaper[] = [
   {
-    title: "Biomedical Equipment Maintenance Risk Prediction",
+    title: "Medical Predictive Maintenance",
     authors: "Tharun Teja",
     date: "2024",
     description: "Developing a machine learning framework to predict maintenance risks for biomedical devices. The project integrates numerical data (age, downtime, cost) with NLP analysis of technician logs using Logistic Regression, Random Forest, and XGBoost models.",
-    link: "/FirstResearch_Paper.pdf",
+    link: "/Medical_predictive_maintenance.pdf",
     color: "from-neon-blue to-purple-600",
   }
 ];

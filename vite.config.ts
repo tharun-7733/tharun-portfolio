@@ -4,7 +4,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: "./",   // important for your custom domain
+  base: "/",   // important for your custom domain
 
   build: {
     outDir: "dist", 

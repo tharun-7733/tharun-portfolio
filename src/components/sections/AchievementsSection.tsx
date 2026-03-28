@@ -1,10 +1,14 @@
 import React, { useRef, useState, useImperativeHandle, forwardRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import { Trophy, Code2, TrendingUp, Cpu } from "lucide-react";
+import { Trophy, Code2, TrendingUp, Cpu, ExternalLink } from "lucide-react";
 
 // Platform configurations for live data fetching and static fallbacks
 const LEETCODE_USERNAME = "tharun_73";
 const CODECHEF_USERNAME = "cp_shanks77";
+<<<<<<< HEAD
+=======
+const HACKERRANK_USERNAME = "tharuntej7373";
+>>>>>>> f1215c3 (feat: populate live leetcode and codechef widget usernames)
 const CODECHEF_RATING = "1383";
 const CODECHEF_STARS = 1;
 
@@ -125,6 +129,59 @@ const AchievementsSection = forwardRef<HTMLElement, {}>((props, ref) => {
 
               {/* Bottom Glow */}
               <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-neon-purple to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            </div>
+
+            {/* HackerRank Card */}
+            <div className="bg-space-light/40 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-green-500/20 relative overflow-hidden flex-1 group hover:border-green-500/50 transition-colors shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <Cpu className="w-8 h-8 text-green-400" />
+                  <h3 className="text-xl md:text-2xl font-bold text-white">HackerRank</h3>
+                </div>
+                <a href={`https://www.hackerrank.com/profile/${HACKERRANK_USERNAME}`} target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 transition-colors">
+                  <ExternalLink className="w-5 h-5" />
+                </a>
+              </div>
+              
+              <p className="text-white/70 text-sm md:text-base mb-6">
+                Earned badges through consistent problem-solving and algorithmic challenges.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-3 bg-space/50 rounded-lg border border-white/5 hover:border-green-500/30 transition-colors">
+                  <span className="font-semibold text-white">C++</span>
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-1 hidden sm:flex">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <svg key={i} className="w-4 h-4 text-green-400 fill-green-400" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <span className="text-xs font-bold text-green-400 bg-green-400/10 px-2 py-1 rounded border border-green-400/20">5 Star</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between p-3 bg-space/50 rounded-lg border border-white/5 hover:border-green-500/30 transition-colors">
+                  <span className="font-semibold text-white">Python, C</span>
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-1 hidden sm:flex">
+                      {Array.from({ length: 4 }).map((_, i) => (
+                        <svg key={i} className="w-4 h-4 text-green-400 fill-green-400" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                      ))}
+                      <svg className="w-4 h-4 text-gray-600 fill-gray-800" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                    </div>
+                    <span className="text-xs font-bold text-green-400 bg-green-400/10 px-2 py-1 rounded border border-green-400/20">4 Star</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Glow */}
+              <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-green-400 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </div>
 
           </motion.div>

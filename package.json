@@ -3,7 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://tharuntej.me",
+  "homepage": "https://tharunportfolio.me",
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
